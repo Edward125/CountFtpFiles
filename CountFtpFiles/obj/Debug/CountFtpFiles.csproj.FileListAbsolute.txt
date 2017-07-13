@@ -1,0 +1,7 @@
+D:\Edward\CountFtpFiles\CountFtpFiles\bin\Debug\CountFtpFiles.exe
+D:\Edward\CountFtpFiles\CountFtpFiles\bin\Debug\CountFtpFiles.pdb
+D:\Edward\CountFtpFiles\CountFtpFiles\obj\Debug\CountFtpFiles.frmMain.resources
+D:\Edward\CountFtpFiles\CountFtpFiles\obj\Debug\CountFtpFiles.Properties.Resources.resources
+D:\Edward\CountFtpFiles\CountFtpFiles\obj\Debug\CountFtpFiles.csproj.GenerateResource.Cache
+D:\Edward\CountFtpFiles\CountFtpFiles\obj\Debug\CountFtpFiles.exe
+D:\Edward\CountFtpFiles\CountFtpFiles\obj\Debug\CountFtpFiles.pdb
