@@ -48,16 +48,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtNewProName = new System.Windows.Forms.TextBox();
-            this.tabSeting = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFolder = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.txtIP = new System.Windows.Forms.TextBox();
             this.btnWriteAll = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -68,8 +58,6 @@
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.tabSeting.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // skinEngine1
@@ -157,7 +145,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabMain);
             this.tabControl1.Controls.Add(this.tabDB);
-            this.tabControl1.Controls.Add(this.tabSeting);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -286,101 +273,6 @@
             this.txtNewProName.TextChanged += new System.EventHandler(this.txtNewProName_TextChanged);
             this.txtNewProName.DoubleClick += new System.EventHandler(this.txtNewProName_DoubleClick);
             // 
-            // tabSeting
-            // 
-            this.tabSeting.Controls.Add(this.groupBox6);
-            this.tabSeting.Location = new System.Drawing.Point(4, 23);
-            this.tabSeting.Name = "tabSeting";
-            this.tabSeting.Size = new System.Drawing.Size(507, 385);
-            this.tabSeting.TabIndex = 2;
-            this.tabSeting.Text = "Setting";
-            this.tabSeting.UseVisualStyleBackColor = true;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label4);
-            this.groupBox6.Controls.Add(this.label3);
-            this.groupBox6.Controls.Add(this.label2);
-            this.groupBox6.Controls.Add(this.label1);
-            this.groupBox6.Controls.Add(this.txtFolder);
-            this.groupBox6.Controls.Add(this.txtPassword);
-            this.groupBox6.Controls.Add(this.txtID);
-            this.groupBox6.Controls.Add(this.txtIP);
-            this.groupBox6.Location = new System.Drawing.Point(3, 13);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(268, 161);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Ftp Setting";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 14);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Ftp Folder";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 14);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Ftp Password";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 14);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Ftp ID";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 14);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Ftp IP";
-            // 
-            // txtFolder
-            // 
-            this.txtFolder.Location = new System.Drawing.Point(89, 125);
-            this.txtFolder.Name = "txtFolder";
-            this.txtFolder.Size = new System.Drawing.Size(161, 22);
-            this.txtFolder.TabIndex = 3;
-            this.txtFolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(89, 92);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(161, 22);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(89, 59);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(161, 22);
-            this.txtID.TabIndex = 1;
-            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtIP
-            // 
-            this.txtIP.Location = new System.Drawing.Point(89, 26);
-            this.txtIP.Name = "txtIP";
-            this.txtIP.Size = new System.Drawing.Size(161, 22);
-            this.txtIP.TabIndex = 0;
-            this.txtIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btnWriteAll
             // 
             this.btnWriteAll.Location = new System.Drawing.Point(6, 268);
@@ -414,9 +306,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.tabSeting.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -434,18 +323,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabMain;
         private System.Windows.Forms.TabPage tabDB;
-        private System.Windows.Forms.TabPage tabSeting;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtFolder;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtIP;
         private System.Windows.Forms.ListBox lstProName;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
