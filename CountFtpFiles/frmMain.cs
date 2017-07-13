@@ -14,11 +14,19 @@ namespace CountFtpFiles
         public frmMain()
         {
             InitializeComponent();
+            skinEngine1.SkinFile = p.AppFolder + @"\MacOS.ssk";
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            loadUI();
+        }
 
+
+
+        private void loadUI()
+        {
+           // skinEngine1.SkinFile = p.AppFolder + @"\MacOS.ssk";
         }
 
         private void btnOK_Click(object sender, EventArgs e)
