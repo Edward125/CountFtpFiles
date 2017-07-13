@@ -29,6 +29,7 @@ namespace CountFtpFiles
         private void loadUI()
         {
            // skinEngine1.SkinFile = p.AppFolder + @"\MacOS.ssk";
+            this.Text = "Compare FTP files & DB Files,Ver:" + Application.ProductVersion + "(Edward_song@yeah.net)";
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -75,20 +76,22 @@ namespace CountFtpFiles
             //    MessageBox.Show(item);
                
             //}
+            compareFile();
         }
 
 
 
         private void compareFile()
         {
+            txtInfo.Text.Trim();
             //
             string[] ftpfiles = FtpHelper.FTPGetFileList(p.FtpIP, p.FtpID, p.FtpPassword, p.FtpFolder);          
-            foreach (string files in ftpfiles)
-            {
-                lstNotFind.Items.Add(files);
-            }
-
-            getDBListFiles(lstDBFileList);
+            //foreach (string files in ftpfiles)
+            //{
+            //    lstNotFind.Items.Add(files);
+            //}
+            List<string> dbfiles = new List<string> ();
+            getDBListFiles(lstDBFileList,out  dbfiles);
 
             //string sql = "SELECT * FROM d_ateprolist";
             //int dbfilescount = -1;
@@ -97,6 +100,37 @@ namespace CountFtpFiles
             //{
             //    lstDBFileList.Items.Add(item);
             //}
+            int notfind = 0;
+            lstNotFind.Items.Add("FTP存在但数据库不存在");
+            foreach (string files in ftpfiles)
+            {
+                if (lstDBFileList.Items.IndexOf(files) != -1)
+                {
+                    //存在
+                    dbfiles.Remove(files);
+                }
+                else
+                {
+                    //不存在
+                    notfind++;
+                    lstNotFind.Items.Add(files);
+                }
+            }
+            lstNotFind.Items.Add(" ");
+            lstNotFind.Items.Add("数据库存在但FTP不存在");
+            if (dbfiles.Count > 0)
+            {
+                
+               foreach (string files in dbfiles )
+               {
+                   lstNotFind.Items.Add(files);
+               }
+	
+            }
+            
+            
+                
+            txtInfo.Text = "FTP存在文件:" + ftpfiles.Length + ",数据库中存在文件:" + lstDBFileList.Items.Count + ",FTP存在但数据库不存在的文件有:" + notfind + ",数据库存在但FTP不存在的文件有:" + dbfiles.Count;
 
         }
 
@@ -123,6 +157,20 @@ namespace CountFtpFiles
                 //lstDBFileList.Items.Add(item);
                 list.Items.Add(item);
             }
+        }
+
+        private void getDBListFiles(ListBox list,out List<string> files)
+        {
+            list.Items.Clear();
+            string sql = "SELECT * FROM d_ateprolist";
+            int dbfilescount = -1;
+            files = p.queryDB(sql, out dbfilescount);
+            foreach (string item in files)
+            {
+                //lstDBFileList.Items.Add(item);
+                list.Items.Add(item);
+            }
+           
         }
 
 
@@ -164,6 +212,10 @@ namespace CountFtpFiles
             {
                 getFtpListFiles();
                 getDBListFiles(lstProName);
+            }
+            if (e.TabPage == tabMain)
+            {
+                compareFile();
             }
         }
 

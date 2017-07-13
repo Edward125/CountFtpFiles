@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>compare_128px_1168903_easyicon.net.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="IrisSkin4, Version=2006.3.22.45, Culture=neutral, PublicKeyToken=127be25a6db25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -101,6 +104,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\System.Data.SQLite.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="compare_128px_1168903_easyicon.net.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -33,7 +33,7 @@
             this.lstNotFind = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtInfo = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lstDBFileList = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -92,7 +92,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnRefresh);
-            this.groupBox4.Controls.Add(this.textBox6);
+            this.groupBox4.Controls.Add(this.txtInfo);
             this.groupBox4.Location = new System.Drawing.Point(6, 6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(492, 68);
@@ -111,15 +111,15 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // textBox6
+            // txtInfo
             // 
-            this.textBox6.BackColor = System.Drawing.Color.Black;
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.textBox6.Location = new System.Drawing.Point(7, 20);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(405, 41);
-            this.textBox6.TabIndex = 5;
+            this.txtInfo.BackColor = System.Drawing.Color.Black;
+            this.txtInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.txtInfo.Location = new System.Drawing.Point(7, 20);
+            this.txtInfo.Multiline = true;
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(405, 41);
+            this.txtInfo.TabIndex = 5;
             // 
             // groupBox5
             // 
@@ -317,7 +317,7 @@
         private System.Windows.Forms.ListBox lstNotFind;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtInfo;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ListBox lstDBFileList;
         private System.Windows.Forms.TabControl tabControl1;
