@@ -125,9 +125,9 @@
     <value>..\bin\Debug\MacOS.ssk;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SQLite_Interop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\SQLite.Interop.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\bin\Release\SQLite.Interop.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="System_Data_SQLite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\System.Data.SQLite.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\System.Data.SQLite.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
