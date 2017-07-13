@@ -35,7 +35,6 @@ namespace CountFtpFiles
                 }
             }
 
-
             if (!File.Exists(@".\System.Data.SQLite.dll"))
             {
                 if (!downloadSqliteDll())
@@ -56,9 +55,6 @@ namespace CountFtpFiles
                 }
             }
 
-
-
-
             if (!File.Exists(p.AppFolder + @"\MacOS.ssk"))
             {
                 if (!downloadSkin())
@@ -68,6 +64,17 @@ namespace CountFtpFiles
                     Environment.Exit(0);
                 }
             }
+            
+            if (!p.checkDB(p.dbFile))
+            {
+                System.Threading.Thread.Sleep(1000);
+                //SplashForm.CloseSplash();
+                Environment.Exit(0);
+            }
+
+            if (!File.Exists(p.iniFilePath))
+                p.createIniFile(p.iniFilePath);
+            p.readIniValue(p.iniFilePath);
 
             Application.Run(new frmMain());
 

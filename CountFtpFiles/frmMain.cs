@@ -37,5 +37,13 @@ namespace CountFtpFiles
                 MessageBox.Show(item);
             }
         }
+
+        private void txtNewProName_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty (txtNewProName.Text.Trim()))
+                btnAdd.Enabled= false;
+            else 
+                btnAdd.Enabled= true ;
+        }
     }
 }
