@@ -162,10 +162,86 @@ proname varchar(255) PRIMARY KEY NOT NULL)";
            
         }
 
-        //public static List<string> queryDB(string sql)
-        //{
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="filescount"></param>
+        /// <returns></returns>
+        public static List<string> queryDB(string sql,out int filescount)
+        {
+            filescount = 0;
+            List<string> files = new List<string>();
+            //string sql = "SELECT * FROM d_alldepstatus";
+            SQLiteConnection conn = new SQLiteConnection(p.dbConnectionString);
+            conn.Open();
+            SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+            SQLiteDataReader re = cmd.ExecuteReader();
 
-        //}
+            if (re.HasRows)
+            {
+                while (re.Read())
+                {
+                    filescount++;
+                    files.Add(re["proname"].ToString());
+                }
+            }
+            conn.Close();
 
+            return files;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sql">REPLACE INTO </param>
+        /// <returns></returns>
+        public  static bool insertDB(string sql)
+        {
+            SQLiteConnection conn = new SQLiteConnection(p.dbConnectionString);
+            conn.Open();
+            SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+                return false;
+            }
+           
+
+            conn.Close();
+            return true;
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sql">DELETE FROM 表名称 WHERE 列名称 = 值</param>
+        /// <returns></returns>
+        public static bool deleteDB(string sql)
+        {
+            SQLiteConnection conn = new SQLiteConnection(p.dbConnectionString);
+            conn.Open();
+            SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+                return false;
+            }
+
+            conn.Close();
+            return true;
+        }
     }
 }

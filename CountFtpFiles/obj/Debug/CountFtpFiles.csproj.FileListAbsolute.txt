@@ -5,3 +5,4 @@ D:\Edward\CountFtpFiles\CountFtpFiles\obj\Debug\CountFtpFiles.Properties.Resourc
 D:\Edward\CountFtpFiles\CountFtpFiles\obj\Debug\CountFtpFiles.csproj.GenerateResource.Cache
 D:\Edward\CountFtpFiles\CountFtpFiles\obj\Debug\CountFtpFiles.exe
 D:\Edward\CountFtpFiles\CountFtpFiles\obj\Debug\CountFtpFiles.pdb
+D:\Edward\CountFtpFiles\CountFtpFiles\obj\Debug\CountFtpFiles.csprojResolveAssemblyReference.cache

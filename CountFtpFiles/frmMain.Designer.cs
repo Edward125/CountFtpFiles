@@ -32,39 +32,43 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lstNotFind = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lstDBFileList = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMain = new System.Windows.Forms.TabPage();
             this.tabDB = new System.Windows.Forms.TabPage();
-            this.tabSeting = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lstFtpFilesList = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.txtIP = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtFolder = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lstProName = new System.Windows.Forms.ListBox();
-            this.txtNewProName = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.lstProName = new System.Windows.Forms.ListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtNewProName = new System.Windows.Forms.TextBox();
+            this.tabSeting = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtFolder = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtIP = new System.Windows.Forms.TextBox();
+            this.btnWriteAll = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabDB.SuspendLayout();
-            this.tabSeting.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tabSeting.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +99,7 @@
             this.lstNotFind.Name = "lstNotFind";
             this.lstNotFind.Size = new System.Drawing.Size(214, 270);
             this.lstNotFind.TabIndex = 0;
+            this.lstNotFind.SelectedIndexChanged += new System.EventHandler(this.lstNotFind_SelectedIndexChanged);
             // 
             // groupBox4
             // 
@@ -107,16 +112,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Files Info";
             // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.Black;
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.textBox6.Location = new System.Drawing.Point(7, 20);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(405, 41);
-            this.textBox6.TabIndex = 5;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,6 +122,16 @@
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.Black;
+            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.textBox6.Location = new System.Drawing.Point(7, 20);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(405, 41);
+            this.textBox6.TabIndex = 5;
             // 
             // groupBox5
             // 
@@ -146,6 +151,7 @@
             this.lstDBFileList.Name = "lstDBFileList";
             this.lstDBFileList.Size = new System.Drawing.Size(244, 270);
             this.lstDBFileList.TabIndex = 0;
+            this.lstDBFileList.SelectedIndexChanged += new System.EventHandler(this.lstDBFileList_SelectedIndexChanged);
             // 
             // tabControl1
             // 
@@ -157,6 +163,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(515, 412);
             this.tabControl1.TabIndex = 5;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabMain
             // 
@@ -173,6 +180,7 @@
             // 
             // tabDB
             // 
+            this.tabDB.Controls.Add(this.groupBox7);
             this.tabDB.Controls.Add(this.groupBox3);
             this.tabDB.Controls.Add(this.groupBox2);
             this.tabDB.Location = new System.Drawing.Point(4, 23);
@@ -183,15 +191,58 @@
             this.tabDB.Text = "Edit DB File";
             this.tabDB.UseVisualStyleBackColor = true;
             // 
-            // tabSeting
+            // groupBox7
             // 
-            this.tabSeting.Controls.Add(this.groupBox6);
-            this.tabSeting.Location = new System.Drawing.Point(4, 23);
-            this.tabSeting.Name = "tabSeting";
-            this.tabSeting.Size = new System.Drawing.Size(507, 385);
-            this.tabSeting.TabIndex = 2;
-            this.tabSeting.Text = "Setting";
-            this.tabSeting.UseVisualStyleBackColor = true;
+            this.groupBox7.Controls.Add(this.btnWriteAll);
+            this.groupBox7.Controls.Add(this.lstFtpFilesList);
+            this.groupBox7.Location = new System.Drawing.Point(288, 68);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(207, 313);
+            this.groupBox7.TabIndex = 2;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "FtpFilesList";
+            // 
+            // lstFtpFilesList
+            // 
+            this.lstFtpFilesList.FormattingEnabled = true;
+            this.lstFtpFilesList.ItemHeight = 14;
+            this.lstFtpFilesList.Location = new System.Drawing.Point(6, 21);
+            this.lstFtpFilesList.Name = "lstFtpFilesList";
+            this.lstFtpFilesList.Size = new System.Drawing.Size(195, 242);
+            this.lstFtpFilesList.TabIndex = 0;
+            this.lstFtpFilesList.SelectedIndexChanged += new System.EventHandler(this.lstFtpFilesList_SelectedIndexChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnDelete);
+            this.groupBox3.Controls.Add(this.lstProName);
+            this.groupBox3.Location = new System.Drawing.Point(6, 69);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(276, 310);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Pro Name List and Delete Files Name";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(6, 263);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(265, 43);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // lstProName
+            // 
+            this.lstProName.FormattingEnabled = true;
+            this.lstProName.ItemHeight = 14;
+            this.lstProName.Location = new System.Drawing.Point(6, 21);
+            this.lstProName.Name = "lstProName";
+            this.lstProName.Size = new System.Drawing.Size(265, 242);
+            this.lstProName.TabIndex = 0;
+            this.lstProName.SelectedIndexChanged += new System.EventHandler(this.lstProName_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -205,16 +256,45 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add New Pro. Name";
             // 
-            // groupBox3
+            // label5
             // 
-            this.groupBox3.Controls.Add(this.btnDelete);
-            this.groupBox3.Controls.Add(this.lstProName);
-            this.groupBox3.Location = new System.Drawing.Point(6, 69);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(495, 310);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Pro Name List and Delete Files Name";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 14);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Pro. Name";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Enabled = false;
+            this.btnAdd.Location = new System.Drawing.Point(403, 20);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(86, 28);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtNewProName
+            // 
+            this.txtNewProName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewProName.Location = new System.Drawing.Point(79, 21);
+            this.txtNewProName.Name = "txtNewProName";
+            this.txtNewProName.Size = new System.Drawing.Size(318, 27);
+            this.txtNewProName.TabIndex = 0;
+            this.txtNewProName.TextChanged += new System.EventHandler(this.txtNewProName_TextChanged);
+            this.txtNewProName.DoubleClick += new System.EventHandler(this.txtNewProName_DoubleClick);
+            // 
+            // tabSeting
+            // 
+            this.tabSeting.Controls.Add(this.groupBox6);
+            this.tabSeting.Location = new System.Drawing.Point(4, 23);
+            this.tabSeting.Name = "tabSeting";
+            this.tabSeting.Size = new System.Drawing.Size(507, 385);
+            this.tabSeting.TabIndex = 2;
+            this.tabSeting.Text = "Setting";
+            this.tabSeting.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -233,55 +313,14 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ftp Setting";
             // 
-            // txtIP
+            // label4
             // 
-            this.txtIP.Location = new System.Drawing.Point(89, 26);
-            this.txtIP.Name = "txtIP";
-            this.txtIP.Size = new System.Drawing.Size(161, 22);
-            this.txtIP.TabIndex = 0;
-            this.txtIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(89, 59);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(161, 22);
-            this.txtID.TabIndex = 1;
-            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(89, 92);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(161, 22);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtFolder
-            // 
-            this.txtFolder.Location = new System.Drawing.Point(89, 125);
-            this.txtFolder.Name = "txtFolder";
-            this.txtFolder.Size = new System.Drawing.Size(161, 22);
-            this.txtFolder.TabIndex = 3;
-            this.txtFolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 14);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Ftp IP";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 14);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Ftp ID";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 14);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Ftp Folder";
             // 
             // label3
             // 
@@ -292,62 +331,65 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Ftp Password";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 14);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Ftp Folder";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 14);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Ftp ID";
             // 
-            // lstProName
+            // label1
             // 
-            this.lstProName.FormattingEnabled = true;
-            this.lstProName.ItemHeight = 14;
-            this.lstProName.Location = new System.Drawing.Point(6, 21);
-            this.lstProName.Name = "lstProName";
-            this.lstProName.Size = new System.Drawing.Size(391, 284);
-            this.lstProName.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 14);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Ftp IP";
             // 
-            // txtNewProName
+            // txtFolder
             // 
-            this.txtNewProName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewProName.Location = new System.Drawing.Point(79, 21);
-            this.txtNewProName.Name = "txtNewProName";
-            this.txtNewProName.Size = new System.Drawing.Size(318, 27);
-            this.txtNewProName.TabIndex = 0;
-            this.txtNewProName.TextChanged += new System.EventHandler(this.txtNewProName_TextChanged);
+            this.txtFolder.Location = new System.Drawing.Point(89, 125);
+            this.txtFolder.Name = "txtFolder";
+            this.txtFolder.Size = new System.Drawing.Size(161, 22);
+            this.txtFolder.TabIndex = 3;
+            this.txtFolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnDelete
+            // txtPassword
             // 
-            this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(403, 21);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(86, 283);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.txtPassword.Location = new System.Drawing.Point(89, 92);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(161, 22);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnAdd
+            // txtID
             // 
-            this.btnAdd.Enabled = false;
-            this.btnAdd.Location = new System.Drawing.Point(403, 20);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(86, 28);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.txtID.Location = new System.Drawing.Point(89, 59);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(161, 22);
+            this.txtID.TabIndex = 1;
+            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label5
+            // txtIP
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 14);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Pro. Name";
+            this.txtIP.Location = new System.Drawing.Point(89, 26);
+            this.txtIP.Name = "txtIP";
+            this.txtIP.Size = new System.Drawing.Size(161, 22);
+            this.txtIP.TabIndex = 0;
+            this.txtIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnWriteAll
+            // 
+            this.btnWriteAll.Location = new System.Drawing.Point(6, 268);
+            this.btnWriteAll.Name = "btnWriteAll";
+            this.btnWriteAll.Size = new System.Drawing.Size(195, 43);
+            this.btnWriteAll.TabIndex = 2;
+            this.btnWriteAll.Text = "Write All";
+            this.btnWriteAll.UseVisualStyleBackColor = true;
+            this.btnWriteAll.Click += new System.EventHandler(this.btnWriteAll_Click);
             // 
             // frmMain
             // 
@@ -368,10 +410,11 @@
             this.tabControl1.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tabDB.ResumeLayout(false);
-            this.tabSeting.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            this.tabSeting.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
@@ -408,6 +451,9 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtNewProName;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.ListBox lstFtpFilesList;
+        private System.Windows.Forms.Button btnWriteAll;
     }
 }
 
