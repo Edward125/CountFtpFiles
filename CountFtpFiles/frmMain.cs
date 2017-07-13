@@ -84,6 +84,8 @@ namespace CountFtpFiles
         private void compareFile()
         {
             txtInfo.Text.Trim();
+            lstNotFind.Items.Clear();
+            lstDBFileList.Items.Clear();
             //
             string[] ftpfiles = FtpHelper.FTPGetFileList(p.FtpIP, p.FtpID, p.FtpPassword, p.FtpFolder);          
             //foreach (string files in ftpfiles)
