@@ -21,6 +21,7 @@ namespace CountFtpFiles
         {
             loadUI();
         }
+      
 
 
 
@@ -44,6 +45,21 @@ namespace CountFtpFiles
                 btnAdd.Enabled= false;
             else 
                 btnAdd.Enabled= true ;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            //string[] f = FtpHelper.FTPGetFileList(p.FtpIP, p.FtpID, p.FtpPassword, p.FtpFolder);
+            //foreach (string  item in f)
+            //{
+            //    MessageBox.Show(item);
+               
+            //}
         }
     }
 }

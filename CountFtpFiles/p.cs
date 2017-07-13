@@ -18,10 +18,10 @@ namespace CountFtpFiles
         public static string dbConnectionString = "Data Source=" + dbFile;
 
 
-        public static string FtpIP = string.Empty;
-        public static string FtpID = string.Empty;
-        public static string FtpPassword = string.Empty;
-        public static string FtpFolder = string.Empty;
+        public static string FtpIP = "10.60.23.42";
+        public static string FtpID = "esop";
+        public static string FtpPassword = "esop@2012";
+        public static string FtpFolder = @"ATE/Wangzhh/ATE program/ATE program/";
 
 
         public enum IniSection
@@ -161,6 +161,11 @@ proname varchar(255) PRIMARY KEY NOT NULL)";
 
            
         }
+
+        //public static List<string> queryDB(string sql)
+        //{
+
+        //}
 
     }
 }
